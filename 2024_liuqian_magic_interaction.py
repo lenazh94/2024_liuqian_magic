@@ -14,7 +14,7 @@ def get_input(prompt_message, expected_type=int, min_val=None, max_val=None):
             print("类型错误，请重新输入限制范围内的整数。")
 
 # 获取名字字数，地域，性别
-name = get_input("请输入名字字数，范围2-7：", int, 2, 7)
+name = get_input("请输入名字字数：", int, 1, 50)
 location = get_input("南方人请输入1，北方人请输入2，不确定请输入3：", int, 1, 3)
 sexe = get_input("男生请输入1，女生请输入2：", int, 1, 2)
 
