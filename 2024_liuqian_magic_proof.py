@@ -44,11 +44,11 @@ def magic_proof():
     return cards[0], remembered_card
 
 # 重新进行多次模拟并计算匹配的频率
-matches_further_corrected = 0
+correct_match_nb = 0
 for _ in range(10000):
     final_card, remembered_card = magic_proof()
     if final_card == remembered_card:
-        matches_further_corrected += 1
+        correct_match_nb += 1
 
-match_rate_further_corrected = matches_further_corrected / 10000
-print(match_rate_further_corrected)
+match_rate = correct_match_nb / 10000
+print(match_rate)
