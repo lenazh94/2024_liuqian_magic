@@ -1,6 +1,6 @@
 import random
 
-def simulate_card_process_further_corrected():
+def magic_proof():
     # 初始牌组
     cards = ['A', 'B', 'C', 'D'] * 2
 
@@ -46,7 +46,7 @@ def simulate_card_process_further_corrected():
 # 重新进行多次模拟并计算匹配的频率
 matches_further_corrected = 0
 for _ in range(10000):
-    final_card, remembered_card = simulate_card_process_further_corrected()
+    final_card, remembered_card = magic_proof()
     if final_card == remembered_card:
         matches_further_corrected += 1
 
