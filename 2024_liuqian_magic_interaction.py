@@ -59,8 +59,8 @@ def simulate_magic(name, location, sexe):
 
     # 7. 好运留下来，烦恼丢出去！
     while len(selceted_cards) > 1:
-        selceted_cards.append(selceted_cards.popleft())  # 第一张牌移到最后
-        selceted_cards.popleft()  # 删除现在的第一张牌
+        selceted_cards.append(selceted_cards.popleft())  # 将第一张牌移到最后
+        selceted_cards.popleft()  # 扔掉现在的第一张牌
 
     # 返回手里剩下的牌和放在一边的牌
     return selceted_cards[0], remembered_card
@@ -69,6 +69,6 @@ final_card, remebered_card = simulate_magic(name, location, sexe)
 
 print()
 print(f"初始牌：{remebered_card}, 剩下的牌：{final_card}")
-print(f"初始牌和手里的牌是否相同：{remebered_card == final_card}")
+print(f"初始牌和手里的牌是否匹配：{remebered_card == final_card}")
 print()
 print("祝大家龙年大吉！")
