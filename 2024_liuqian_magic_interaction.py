@@ -7,11 +7,11 @@ def get_input(prompt_message, expected_type=int, min_val=None, max_val=None):
         try:
             value = expected_type(user_input)
             if (min_val is not None and value < min_val) or (max_val is not None and value > max_val):
-                print(f"Error: Please enter a value between {min_val} and {max_val}.")
+                print(f"范围错误，请输入 {min_val}至{max_val}之间的整数。")
             else:
                 return value
         except ValueError:
-            print(f"输入类型或范围错误，请重新输入。")
+            print("输入类型错误，请重新输入要求范围内的整数。")
 
 # 获取名字字数，地域，性别
 name = get_input("请输入名字字数，范围2-7：", int, 2, 7)
