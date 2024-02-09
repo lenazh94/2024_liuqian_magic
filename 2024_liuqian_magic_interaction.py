@@ -69,6 +69,6 @@ final_card, remebered_card = simulate_magic(name, location, sexe)
 
 print()
 print(f"初始牌：{remebered_card}, 剩下的牌：{final_card}")
-print(f"初始牌和手里的牌是否相同：{remebered_card == final_card})"
+print(f"初始牌和手里的牌是否相同：{remebered_card == final_card}")
 print()
 print("祝大家龙年大吉！")
