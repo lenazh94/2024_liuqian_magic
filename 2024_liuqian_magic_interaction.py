@@ -26,9 +26,11 @@ def simulate_magic(name, location, sexe):
     # 随机选择四张，对折撕开
     selected_values = random.sample(cards, 4)
     selceted_cards = deque(selected_values * 2)
-    print(f"抽出的牌：{selceted_cards}")
     
-    # 1. 根据名字有几个字，将前n张牌移到最后
+    print()
+    print("抽出的牌：", *selceted_cards)
+    
+    # 1. 姓名：根据名字有几个字，将前n张牌移到最后
     selceted_cards.rotate(-name)
 
     # 2. 取出前三张牌并随机插入剩余牌中，不能插在第一张和最后一张
@@ -41,18 +43,14 @@ def simulate_magic(name, location, sexe):
     # 3. 把最上面的牌放到一边
     remembered_card = selceted_cards.popleft()
 
-    # 4. 南方人取1张，北方人取2张，无法确定取3张，将这些牌随机插入剩下的牌中
-    first_a = [selceted_cards.popleft() for _ in range(location)]
+    # 4. 地域：南方人取1张，北方人取2张，无法确定取3张，将这些牌随机插入剩下的牌中
+    first_cards = [selceted_cards.popleft() for _ in range(location)]
 
-
-    for card in first_a:
-        if len(selceted_cards) > 2:
-            insert_position = random.randint(1, len(selceted_cards) - 2)
-        else:
-            insert_position = 0
+    for card in first_cards:
+        insert_position = random.randint(1, len(selceted_cards) - 2)
         selceted_cards.insert(insert_position, card)
 
-    # 5. 男生取1张，女生取2张，将这些牌扔掉
+    # 5. 性别：男生取1张，女生取2张，将这些牌扔掉
     for _ in range(sexe):
         selceted_cards.popleft()
 
@@ -69,6 +67,7 @@ def simulate_magic(name, location, sexe):
 
 final_card, remebered_card = simulate_magic(name, location, sexe)
 
+print()
 print(f"初始牌：{remebered_card}, 剩下的牌：{final_card}")
 print(f"初始牌和手里的牌是否相同：{remebered_card == final_card})"
 print()
