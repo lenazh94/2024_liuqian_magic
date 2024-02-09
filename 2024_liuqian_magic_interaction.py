@@ -11,12 +11,12 @@ def get_input(prompt_message, expected_type=int, min_val=None, max_val=None):
             else:
                 return value
         except ValueError:
-            print(f"Error: Invalid input. Please enter a valid {expected_type.__name__}.")
+            print(f"输入类型或范围错误，请重新输入。")
 
-# 获取名字字数，南方人/北方人，性别
-name = get_input("请输入名字字数，范围2-7 ", int, 2, 7)
-location = get_input("南方人请输入1，北方人请输入2，不确定请输入3 ", int, 1, 3)
-sexe = get_input("男生请输入1，女生请输入2 ", int, 1, 2)
+# 获取名字字数，地域，性别
+name = get_input("请输入名字字数，范围2-7：", int, 2, 7)
+location = get_input("南方人请输入1，北方人请输入2，不确定请输入3：", int, 1, 3)
+sexe = get_input("男生请输入1，女生请输入2：", int, 1, 2)
 
 def simulate_magic(name, location, sexe):
     # 洗牌
